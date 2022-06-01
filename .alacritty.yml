@@ -1,0 +1,23 @@
+shell:
+  program: /usr/bin/fish
+
+live_config_reload: true
+
+font:
+  normal:
+    family: VictorMono Nerd Font
+    style: Medium
+
+  bold:
+    family: VictorMono Nerd Font
+    style: Bold
+
+  italic:
+    family: VictorMono Nerd Font
+    style: Medium Italic
+
+  bold_italic:
+    family: VictorMono Nerd Font
+    style: Bold Italic
+
+  size: 12
