@@ -1,0 +1,297 @@
+# Separators:                            
+
+format = """
+[[  ](#3377ff bg:#cccccc)\
+[](#cccccc bg:#999999)\
+[](#999999 bg:#666666)\
+[](#666666 bg:#444444)\
+$username\
+$hostname\
+$shell\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$cobol\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$crystal\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$custom\
+](bg:#444444)\
+[](#444444 bg:#333333)\
+[](#333333 bg:#222222)\
+$fill\
+[](#333333 bg:#222222)\
+[](#444444 bg:#333333)\
+[$cmd_duration\
+$battery\
+$time\
+](bg:#444444)\
+$line_break\
+$jobs\
+$status\
+$character\
+"""
+
+[fill]
+symbol = " "
+
+[aws]
+style = "bold yellow bg:#444444"
+format = ' on [$symbol($profile)(\($region\))(\[$duration\])]($style)'
+
+[battery]
+format = ' [$symbol$percentage]($style) '
+
+[cmake]
+style = "bold blue bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[cmd_duration]
+style = "bold yellow bg:#444444"
+format = ' took [$duration ⏳]($style) '
+
+[cobol]
+style = "bold blue bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[conda]
+style = "bold green bg:#444444"
+format = ' via [$symbol$environment]($style)'
+
+[crystal]
+style = "bold red bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[dart]
+style = "bold blue bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[deno]
+style = "bold green bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[directory]
+style = "bold cyan bg:#444444"
+read_only = "🔐"
+read_only_style = "bold red bg:#444444"
+format = ' 📂 [$path]($style)[$read_only]($read_only_style) '
+
+[docker_context]
+style = "bold blue bg:#444444"
+format = ' via [$symbol$context]($style)'
+
+[dotnet]
+style = "bold blue bg:#444444"
+format = ' via [$symbol($version)(🎯 $tfm)]($style) '
+
+[elixir]
+style = "bold purple bg:#444444"
+format = ' via [$symbol($version \(OTP $otp_version\))]($style) '
+
+[elm]
+style = "bold cyan bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[erlang]
+style = "bold red bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[gcloud]
+style = "bold blue bg:#444444"
+format = ' on [$symbol$account(@$domain)(\($region\))]($style)'
+
+[git_branch]
+symbol = " "
+style = "bold purple bg:#444444"
+format = ' on [$symbol$branch]($style) '
+truncation_length = 20
+
+[git_status]
+style = "bold red bg:#444444"
+
+[git_commit]
+style = "bold green bg:#444444"
+
+[golang]
+style = "bold cyan bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[helm]
+style = "bold white bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[hg_branch]
+style = "bold bg:#444444"
+
+[java]
+symbol = "🍵 "
+style = "bold red bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[jobs]
+symbol = "🛠 "
+format = '[$number$symbol]($style) '
+number_threshold = 1
+
+[julia]
+style = "bold purple bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[kotlin]
+style = "bold blue bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[kubernetes]
+style = "bold cyan bg:#444444"
+format = ' [$symbol$context( \($namespace\))]($style)'
+
+[lua]
+style = "bold blue bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[memory_usage]
+style = "bold white bg:#444444"
+format = ' via $symbol[$ram( | $swap)]($style)'
+
+[nim]
+style = "bold yellow bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[nix_shell]
+style = "bold blue bg:#444444"
+format = ' via [$symbol$state( \($name\))]($style)'
+
+[nodejs]
+style = "bold green bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[ocaml]
+style = "bold yellow bg:#444444"
+format = ' via [$symbol($version)(\($switch_indicator$switch_name\))]($style) '
+
+[openstack]
+style = "bold yellow bg:#444444"
+format = ' on [$symbol$cloud(\($project\))]($style)'
+
+[package]
+style = "bold 208 bg:#444444"
+format = ' is [$symbol$version]($style) '
+
+[perl]
+style = "bold 149 bg:#444444"
+format = '  via [$symbol($version)]($style) '
+
+[php]
+style = "bold 147 bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[pulumi]
+style = "bold 5 bg:#444444"
+format = '  via [$symbol$stack]($style) '
+
+[purescript]
+style = "bold white bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[python]
+style = "bold yellow bg:#444444"
+format = ' via [${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style) '
+
+[red]
+style = "bold red bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[ruby]
+style = "bold red bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[rust]
+style = "bold red bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[scala]
+style = "bold red bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[status]
+format = "[$symbol ]($style)"
+disabled = false
+
+[swift]
+style = "bold 202 bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[terraform]
+style = "bold 105 bg:#444444"
+format = ' via [$symbol$workspace]($style) '
+
+[time]
+disabled = false
+style = "bold yellow bg:#444444"
+format = ' at [$time 🕓]($style) '
+
+[username]
+style_user = "bold yellow bg:#444444"
+format = ' [[$user]($style) in '
+
+[vagrant]
+style = "bold cyan bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[vlang]
+style = "bold blue bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[zig]
+style = "bold yellow bg:#444444"
+format = ' via [$symbol($version)]($style) '
+
+[character]
+success_symbol = "[](green)"
+error_symbol = "[](red)"
