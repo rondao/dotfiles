@@ -1,0 +1,10 @@
+[[repos]]
+url = "localhost"
+name = "LOCAL"
+
+[[repos.themes]]
+name = "rondao"
+directory = "/home/rondao/.config/leftwm/themes/rondao"
+version = "0.0.0"
+leftwm_versions = "*"
+current = true
