@@ -1,0 +1,28 @@
+* {{
+    active-background: {color8};
+    active-foreground: {color7};
+    normal-background: {color8};
+    normal-foreground: {color7};
+    urgent-background: {color8};
+    urgent-foreground: {color7};
+
+    alternate-active-background: {color10};
+    alternate-active-foreground: {color7};
+    alternate-normal-background: {color10};
+    alternate-normal-foreground: {color7};
+    alternate-urgent-background: {color10};
+    alternate-urgent-foreground: {color7};
+
+    selected-active-background: {color4};
+    selected-active-foreground: {color7};
+    selected-normal-background: {color4};
+    selected-normal-foreground: {color7};
+    selected-urgent-background: {color4};
+    selected-urgent-foreground: {color7};
+
+    background-color: @background;
+    background: {background};
+    foreground: {foreground};
+    border-color: @foreground;
+    spacing: 2;
+}}
