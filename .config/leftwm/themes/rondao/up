@@ -18,8 +18,11 @@ fi
 #set the theme.toml config
 echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
 
-#set background
-if [ -x "$(command -v feh)" ]; then
+#set background (and colorscheme with pywal)
+if [ -x "$(command -v wal)" ]; then
+  wal -i "${SCRIPTPATH}/wallpapers/"
+  (cat ~/.cache/wal/sequences &)
+elif [ -x "$(command -v feh)" ]; then
   feh --bg-fill --randomize "${SCRIPTPATH}/wallpapers/"
 fi
 
