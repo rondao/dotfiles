@@ -15,15 +15,19 @@ elif [ -x "$(command -v compton)" ]; then
   compton &> /dev/null &
 fi
 
-#set the theme.toml config
-echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
-
 #set background (and colorscheme with pywal)
 if [ -x "$(command -v wal)" ]; then
   wal -i "${SCRIPTPATH}/wallpapers/"
   (cat ~/.cache/wal/sequences &)
 elif [ -x "$(command -v feh)" ]; then
   feh --bg-fill --randomize "${SCRIPTPATH}/wallpapers/"
+fi
+
+#set the theme.toml config
+if [ -x "$(command -v wal)" ]; then
+  echo "LoadTheme $HOME/.cache/wal/leftwm-theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
+else
+  echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
 fi
 
 #boot a polybar for each monitor
