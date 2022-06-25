@@ -1,0 +1,22 @@
+#!/bin/bash
+
+shopt -s nullglob globstar
+
+# Search Engine options.
+declare -A searchOptions
+searchOptions["ArchWiki"]="https://wiki.archlinux.org/index.php?search="
+searchOptions["DuckDuckGo"]="https://duckduckgo.com/?q="
+searchOptions["Google"]="https://www.google.com/search?q="
+searchOptions["GMaps"]="https://www.google.com/maps/search/"
+searchOptions["YouTube"]="https://www.youtube.com/results?search_query="
+
+# Select a Search Engine.
+selectedSearch=$(printf '%s\n' "${!searchOptions[@]}" | rofi -dmenu -i -p "Search Engine" "$@")
+[[ -n $selectedSearch ]] || exit
+
+# The text to Query.
+query=$(rofi -dmenu -l 0 -p $selectedSearch)
+[[ -n $query ]] || exit
+
+# Go to URL joining the Search Engine with the Query.
+xdg-open "${searchOptions[$selectedSearch]}$query"

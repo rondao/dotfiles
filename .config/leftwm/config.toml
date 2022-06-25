@@ -23,12 +23,6 @@ key = "s"
 
 [[keybind]]
 command = "Execute"
-value = "rofi-pass"
-modifier = ["modkey"]
-key = "b"
-
-[[keybind]]
-command = "Execute"
 value = "alacritty"
 modifier = ["modkey"]
 key = "t"
@@ -43,6 +37,18 @@ key = "e"
 command = "CloseWindow"
 modifier = ["modkey"]
 key = "q"
+
+[[keybind]]
+command = "Execute"
+value = "rofi-pass"
+modifier = ["modkey"]
+key = "b"
+
+[[keybind]]
+command = "Execute"
+value = "rofi-search"
+modifier = ["modkey"]
+key = "g"
 
 [[keybind]]
 command = "SoftReload"
