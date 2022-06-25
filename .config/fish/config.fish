@@ -1,3 +1,5 @@
+set fish_greeting
+
 # Commands to run in interactive sessions can go here.
 if status is-interactive
     # Apply pywal color scheme.
