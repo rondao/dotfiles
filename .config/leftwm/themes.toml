@@ -1,6 +1,7 @@
 [[repos]]
 url = "localhost"
 name = "LOCAL"
+definitions_version = 0
 
 [[repos.themes]]
 name = "rondao"
