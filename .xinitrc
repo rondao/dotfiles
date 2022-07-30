@@ -33,7 +33,7 @@ fi
 # Set mouse cursor to left pointer.
 xsetroot -cursor_name left_ptr
 
-# Set correct keyboard for X
+# Set correct keyboard for X.
 setxkbmap
 
 # NetworkManager applet.
@@ -41,8 +41,11 @@ if [ -x /usr/bin/nm-applet ] ; then
    nm-applet --sm-disable &
 fi
 
-# GUI PolicyKit agent
+# GUI PolicyKit agent.
 lxqt-policykit-agent &
+
+# Hide the cursor when not used.
+unclutter --timeout 1 --ignore-scrolling &
 
 # Start a window manager.
 exec dbus-launch leftwm
