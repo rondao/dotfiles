@@ -1,15 +1,17 @@
 [user]
 	email = rafael.rondao@gmail.com
-	name = Rafael Rondao
+	name = Rafael Rondão
+	signingkey = F3340DD900DE38B50E49D1E4764FF5733ECB39D5
 
 [init]
 	defaultBranch = main
 
 [pull]
 	ff = only
+	rebase = merges
 
 [core]
-	editor = helix
+	editor = hx
 	pager = delta
 
 [interactive]
@@ -18,3 +20,9 @@
 [delta]
 	navigate = true # use n and N to move between diff sections
 	light = false   # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[commit]
+	gpgsign = true
+
+[push]
+	gpgsign = if-asked
