@@ -6,6 +6,7 @@ shopt -s nullglob globstar
 declare -A searchOptions
 searchOptions["ArchWiki"]="https://wiki.archlinux.org/index.php?search="
 searchOptions["DuckDuckGo"]="https://duckduckgo.com/?q="
+searchOptions["Gentoo"]="https://wiki.gentoo.org/index.php?search="
 searchOptions["Google"]="https://www.google.com/search?q="
 searchOptions["GMaps"]="https://www.google.com/maps/search/"
 searchOptions["YouTube"]="https://www.youtube.com/results?search_query="
