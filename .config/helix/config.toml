@@ -4,10 +4,17 @@ theme = "monokai"
 line-number = "relative"
 mouse = false
 
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "block"
+
+[keys.normal]
+"ç" = "command_mode"
 
 [keys.insert]
 j = { k = "normal_mode" }
