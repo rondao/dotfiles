@@ -16,11 +16,11 @@ password_files=( "${password_files[@]#"$prefix"/}" )
 password_files=( "${password_files[@]%.gpg}" )
 
 # shows a list of all password files and saved the selected one in a variable
-password=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu "$@")
+password=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu 2> /dev/null)
 [[ -n $password ]] || exit
 
 if [[ $copyit -eq 0 ]]; then
-    xdotool type "$(pass show $password | head -n1)"
+    wtype "$(pass show $password | head -n1)"
 else
     pass -c "$password" 2> /dev/null
 fi
