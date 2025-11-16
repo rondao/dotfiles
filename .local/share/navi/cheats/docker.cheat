@@ -1,0 +1,19 @@
+% docker
+@ commands
+
+# List Docker containers
+docker container list
+
+# Remove Docker container by force
+docker container rm -f $(echo '<container_id>' | choose 0)
+
+# Stop Docker container
+docker container stop $(echo '<container_id>' | choose 0)
+
+# Start up a Docker Compose file
+docker compose up -d
+
+# Shutdown a Docker Compose file
+docker compose down
+
+$ container_id: docker container list | tail -n +2 | choose 0:1

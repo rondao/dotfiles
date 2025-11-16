@@ -1,0 +1,7 @@
+% tail
+@ commands
+
+# Ignore/Remove the first N lines of the input
+tail -n +<N>
+
+$ N: echo '2' --- --fzf-overrides '--no-select-1'

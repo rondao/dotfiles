@@ -1,0 +1,8 @@
+% ffmpeg
+
+# Trim a video file
+ffmpeg -ss <trim_start_time> -to <trim_length> -i <input_video_file> -c copy <output_video_file>
+
+$ trim_start_time: echo '00:00:00' --- --fzf-overrides '--no-select-1'
+$ input_video_file: fd -HI
+$ output_video_file: echo 'output.mp4' --- --fzf-overrides '--no-select-1'

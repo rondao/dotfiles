@@ -1,0 +1,7 @@
+% tr
+
+# Trim input string
+tr --delete "<character>"
+
+# Trim/Remove empty lines
+tr -s '\n'

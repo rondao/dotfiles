@@ -1,0 +1,7 @@
+% head
+@ commands
+
+# Ignore/Remove the last N lines of the input
+head -n -<N>
+
+$ N: echo '1' --- --fzf-overrides '--no-select-1'

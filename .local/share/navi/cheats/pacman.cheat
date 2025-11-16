@@ -1,0 +1,12 @@
+% pacman
+
+# Uninstall/Remove package and it's dependencies
+sudo pacman -Rns $(echo "<package>" | choose 0)
+
+# List explicit installed packages
+pacman -Qe
+
+# List installed files from package
+pacman -Ql $(echo "<package>" | choose 0)
+
+$ package: pacman -Qe

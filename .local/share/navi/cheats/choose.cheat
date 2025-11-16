@@ -1,0 +1,9 @@
+% choose
+@ commands
+
+# Select the N column of an input separated by F
+choose -f '<F>' <N>
+
+
+$ N: echo '0' --- --fzf-overrides '--no-select-1'
+$ F: echo ' ' --- --fzf-overrides '--no-select-1'

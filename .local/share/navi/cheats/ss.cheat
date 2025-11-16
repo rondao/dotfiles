@@ -1,0 +1,4 @@
+% ss
+
+# List open/listen ports
+ss -lntup

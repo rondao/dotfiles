@@ -1,0 +1,3 @@
+% commands
+
+$ __cmd_find: fd -HI

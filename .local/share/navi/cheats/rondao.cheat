@@ -1,0 +1,45 @@
+% rondao
+
+# Mount Windows PC
+sudo mount -t cifs "//PC-MARCOS/Share" /home/rondao/windows/ -o uid=1000
+
+# Unmount Windows PC
+sudo umount /home/rondao/windows
+
+# Fix NTFS with bad mount
+sudo ntfsfix -d <device>
+
+# SSH Raspberry Pi
+ssh rondao@192.168.0.114
+
+# SSH Chacara
+ssh alarm@100.96.1.18
+
+# Copy Chacara 1
+rsync -chavzP --stats "alarm@100.96.1.18:/var/lib/motioneye/Camera1/2025-<month>-*" /run/media/rondao/HD_FILES/chacara/quartinho/
+
+# Copy Chacara 2
+rsync -chavzP --stats "alarm@100.96.1.18:/var/lib/motioneye/Camera2/2025-<month>-*" /run/media/rondao/HD_FILES/chacara/piscina/
+
+# Copy Chacara 3
+rsync -chavzP --stats "alarm@100.96.1.18:/home/alarm/servico/2025-<month>-*" /run/media/rondao/HD_FILES/chacara/servico/
+
+# Copy Chacara 4
+rsync -chavzP --stats "alarm@100.96.1.18:/var/lib/motioneye/Camera4/2025-<month>-*" /run/media/rondao/HD_FILES/chacara/portao/
+
+# Copy Chacara 5
+rsync -chavzP --stats "alarm@100.96.1.18:/var/lib/motioneye/Camera5/2025-<month>-*" /run/media/rondao/HD_FILES/chacara/varanda/
+
+# Remove comment lines
+rg -v "^#"
+
+# Redirect stderr to stdout
+2>&1
+
+# Redirect stderr to null
+2> /dev/null
+
+# Bandplay
+mpv https://hqf6tcxuhk.singularcdn.net.br/live/019861d8-f31b-743e-b541-0c91f128804f/s1/playlist-1080p.m3u8?sjwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmlfc3ViIjoiLzAxOTg2MWQ4LWYzMWItNzQzZS1iNTQxLTBjOTFmMTI4ODA0Zi8iLCJ1aWQiOiJiZTllMmQzYy1kMWM1LTRlNWItYTA4Yy0xODQxNGE0NzkwNWUiLCJyYXUiOm51bGwsImJleSI6ZmFsc2UsImlpcCI6ZmFsc2UsIm5iZiI6MTc2MjYyNDEzMywiaWF0IjoxNzYyNjI0MTMzLCJleHAiOjE3OTQxNjAxMzMsImp0aSI6ImJlOWUyZDNjLWQxYzUtNGU1Yi1hMDhjLTE4NDE0YTQ3OTA1ZSIsImlzcyI6IlNwYWxsYSJ9.ThlWoua2ixER_6Rsm32roGgpNEkNtFoMiprAoJNSkn8&uid=be9e2d3c-d1c5-4e5b-a08c-18414a47905e
+
+$ device: lsblk -plno NAME

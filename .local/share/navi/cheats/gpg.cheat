@@ -1,0 +1,19 @@
+% gpg
+
+# List GPG keys
+gpg --list-keys
+
+# Encrypt file with GPG key
+gpg --encrypt --recipient $(echo '<secret_key>' | choose 0) <file>
+
+# Decrypt file
+gpg --decrypt <file>
+
+# Edit GPG secret key
+gpg --edit-key $(echo '<secret_key>' | choose 0)
+
+# Export/Backup GPG private key
+gpg --armor --export-secret-keys $(echo '<secret_key>' | choose 0) > output.gpg
+
+$ secret_key: gpg --list-secret-keys | tr -d "\n" | choose -f "  |uid" 2:3
+$ file: fd -HI

@@ -1,0 +1,10 @@
+% scanimage
+
+# Scan image
+scanimage --format=png --resolution 200 --mode Color --output-file output.png
+
+# List Scanners
+scanimage -L
+
+# Show Scanner options
+scanimage -A

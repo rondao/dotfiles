@@ -1,0 +1,30 @@
+% systemctl
+@ commands
+
+# Check status of a service
+systemctl status <service>
+
+# Start a service
+systemctl start <service>
+
+# Stop a service
+systemctl stop <service>
+
+# Enable a service
+systemctl enable <service>
+
+# Disable a service
+systemctl disable <service>
+
+# Edit a service
+systemctl edit --full <force> <user> <service>
+
+# Revert a service
+systemctl revert <service>
+
+# List all services
+systemctl list-unit-files --type=service
+
+$ service: systemctl list-unit-files --type=service | tail -n +2 | head -n -2 | choose 0
+$ force: echo '--force' --- --fzf-overrides '--no-select-1'
+$ user: echo '--user' --- --fzf-overrides '--no-select-1'

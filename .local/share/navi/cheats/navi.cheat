@@ -1,0 +1,6 @@
+% navi
+
+# Edit Navi's cheat files
+$EDITOR <cheat_file>
+
+$ cheat_file: fd -HI . $(navi info cheats-path)
